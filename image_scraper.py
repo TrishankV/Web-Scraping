@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from pathlib import Path
 from PIL import Image
 
-link = "https://sxypix.com/w/89a2dce529baca82cdc6c0d3bffb1277?sk=Rae-Lil-Black&so=latest&sp=1"
+link = "" #your link here 
 
 options = ChromeOptions()
 options.add_argument("--headless=new")
@@ -25,7 +25,7 @@ def gets_url(classes, location, source):
     return results
 
 if __name__ == "__main__":
-    returned_results = gets_url("gall_el pix_el grid-item transition_bs", "img", "src")
+    returned_results = gets_url("", "img", "src") # enter the class in whichc the iamge is stored 
     for b in returned_results:
         image_content = requests.get(b).content
         image_file = io.BytesIO(image_content)
